@@ -24,20 +24,16 @@ const displayMessage = function (str) {
   document.querySelector('.message').textContent = str;
 };
 
-//document.querySelector('.number').textContent = secretNumber;
-
 // evento en el boton ,que detecta si es igual al numero
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
 
   // cuando no hay input
   if (!guess) {
-    //document.querySelector('.message').textContent = 'Enter a Number 😒';
     displayMessage('enter a number');
   }
   //cuando gana
   else if (guess === secretNumber) {
-    //document.querySelector('.message').textContent = ('Correct Number! 🏆');
     displayMessage('Correct Number! 🏆');
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -51,13 +47,10 @@ document.querySelector('.check').addEventListener('click', function () {
   //cuando es mayor
   else if (guess !== secretNumber) {
     if (score > 1) {
-      /* document.querySelector('.message').textContent =
-        guess > secretNumber ? 'Too high! 🚀' : 'Too low! 🦞'; */
       displayMessage(guess > secretNumber ? 'Too high! 🚀' : 'Too low! ⏬');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      //document.querySelector('.message').textContent = 'You Lost ! ❌';
       displayMessage('You Lost ! 😥');
       document.querySelector('.score').textContent = 0;
     }
@@ -77,7 +70,7 @@ resetBtn.addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
   document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
-  //document.querySelector('.message').textContent = 'Start guessing...';
+
   displayMessage('Start guessing...');
 
   //cambia el css de lo ganado
