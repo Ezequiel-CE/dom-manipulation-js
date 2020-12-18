@@ -58,7 +58,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       //document.querySelector('.message').textContent = 'You Lost ! ❌';
-      displayMessage('You Lost ! ❌');
+      displayMessage('You Lost ! 😥');
       document.querySelector('.score').textContent = 0;
     }
   }
